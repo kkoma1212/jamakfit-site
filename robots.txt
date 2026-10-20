@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kkoma1212.github.io/jamakfit-site/sitemap.xml
