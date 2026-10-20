@@ -1,0 +1,97 @@
+/* 자막핏 홍보 사이트 색·글꼴·페이지 배치 — site.css 뒤에 불러온다.
+   색은 자막핏 앱과 같다(jamakfit/web/home/home.css): 밤하늘 남색 #1b2563·#34499c, 달 노랑 #ffd54a, 분홍 #f6b5d1, 보라 #b9a7ef, 민트 #82e0c8.
+   노랑은 '핏'(꼭 맞음)과 주요 단추에만 쓴다. 글꼴은 Pretendard(OFL) — 앱 제목 글꼴(행복체)은 개인용이라 쓰지 않는다(P-002). */
+:root{
+  --canvas:#f7f4fc;--paper:#fff;--paper-2:#efeafd;--line:#e6e0f3;--line-strong:#cfc6e6;
+  --text:#1c2140;--muted:#5f6585;
+  --night:#1b2563;--night-2:#34499c;--night-deep:#141c52;--moon:#ffd54a;--moon-dark:#dcb11c;
+  --pink:#f6b5d1;--lav:#b9a7ef;--lav-soft:#efeafd;--mint:#82e0c8;--mint-dark:#23977a;--mint-soft:#e6f8f2;
+  --teacher:var(--night-2);--teacher-deep:var(--night);--student:var(--mint-dark);--student-soft:var(--mint-soft);
+  --note:#fff4c2;--note-edge:var(--moon-dark);--note-ink:#5a4600;--device:#1c2140;
+  --font-display:"Pretendard Variable",Pretendard,system-ui,-apple-system,"Malgun Gothic",sans-serif;
+  --shadow-card:0 1px 2px rgba(28,33,64,.05),0 10px 28px -16px rgba(28,33,64,.25);
+}
+h1,h2{font-weight:800;letter-spacing:-.035em}
+h3{letter-spacing:-.03em}
+:focus-visible{outline-color:var(--moon-dark)}
+.bar{background:rgba(247,244,252,.94)}
+.brand img{width:auto;height:34px;border-radius:0}
+.eyebrow{color:var(--night-2)}
+
+/* 단추: 주요 = 달 노랑(앱의 큰 단추와 같음), 보조 = 흰 바탕 */
+.btn--primary{background:var(--moon);color:var(--night);box-shadow:0 4px 0 var(--moon-dark),0 10px 20px -8px rgba(220,177,28,.55)}
+.btn--primary:hover{background:#ffdc66}
+.btn--primary:active{box-shadow:0 1px 0 var(--moon-dark)}
+.btn.bar__cta{box-shadow:0 3px 0 var(--moon-dark)}
+
+/* ── 첫 화면: 밤하늘 띠 위에 글, 오른쪽에 노트북 틀 ── */
+.hero{position:relative;padding:clamp(32px,6vw,88px) 0 clamp(64px,8vw,104px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(1.6px 1.6px at 8% 18%,#fff 60%,transparent 61%),radial-gradient(1.2px 1.2px at 22% 62%,#fff 60%,transparent 61%),
+  radial-gradient(1.8px 1.8px at 38% 24%,#fff 60%,transparent 61%),radial-gradient(1.2px 1.2px at 64% 12%,#fff 60%,transparent 61%),
+  radial-gradient(1.6px 1.6px at 86% 30%,#fff 60%,transparent 61%),linear-gradient(170deg,var(--night-deep),var(--night-2));z-index:-1}
+.hero__grid{display:grid;gap:clamp(36px,5vw,64px);align-items:center}
+.hero h1{margin-top:20px;font-size:clamp(36px,5.2vw,64px);line-height:1.15;color:#fff}
+.hero h1 span{display:block}
+.hero h1 em{font-style:normal;color:var(--night);background:var(--moon);border-radius:14px;padding:0 .18em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero .lead{color:#d6dbf7;margin-top:22px}
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:4px 14px 4px 6px;border-radius:999px;background:rgba(255,255,255,.12);font-size:14px;font-weight:700;color:#d6dbf7}
+.pill b{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:999px;background:var(--mint);color:var(--night);font-size:13px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .btn--ghost{background:transparent;color:#fff;border-color:#ffffff66}
+.hero .btn--ghost:hover{border-color:#fff}
+.facts{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:15px;font-weight:600;color:#c9d1ff}
+.facts li{display:inline-flex;align-items:center;gap:7px}
+.facts svg{color:var(--mint)}
+.clouds{height:30px;margin-top:-30px;background:radial-gradient(circle at 26px 34px,var(--lav) 25px,transparent 26px) 0 0/52px 30px repeat-x,
+  radial-gradient(circle at 26px 40px,var(--pink) 27px,transparent 28px) 26px 0/52px 30px repeat-x}
+@media (min-width:1024px){.hero__grid{grid-template-columns:.95fr 1.05fr;align-items:start}.hero__grid>*{min-width:0}}
+
+/* 노트북 틀(우리반 허브 brand.css와 같은 모양, 색만 자막핏) */
+.laptop{margin:0}
+.laptop__screen{padding:1.6%;border-radius:16px 16px 4px 4px;background:#0d1236;box-shadow:inset 0 0 0 1.5px #3b4373,0 26px 50px -24px rgba(8,10,40,.7)}
+.laptop__screen img{width:100%;height:auto;aspect-ratio:16/10;border-radius:6px;background:#fff}
+.laptop__base{height:14px;margin:0 max(-5%,calc(var(--gutter) * -1));border-radius:0 0 14px 14px;background:linear-gradient(#d9d5e8,#b4adcc);box-shadow:0 10px 18px -10px rgba(8,10,40,.6)}
+.laptop figcaption{margin-top:14px;text-align:center;font-size:15px;font-weight:700;color:#c9d1ff}
+
+/* ── 걱정 띠: 쪽지 + 달·분홍·민트 자석 ── */
+.worry{padding:clamp(56px,7vw,96px) 0}
+.worry ul{list-style:none;margin:0;padding:0;display:grid;gap:28px 20px}
+.worry li{position:relative;background:var(--paper);border-radius:var(--r);padding:30px 24px 24px;box-shadow:var(--shadow-card),0 0 0 1px var(--line)}
+.worry li::before{content:"";position:absolute;top:-11px;left:24px;width:24px;height:24px;border-radius:50%;background:var(--m);box-shadow:2px 4px 0 #1c214026,inset 4px 5px 0 #ffffff55,inset -4px -6px 0 #0002}
+.worry h3{font-size:20px}
+.worry h3 small{display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:4px;text-decoration:line-through;text-decoration-color:#b0386a99}
+.worry p{margin-top:8px;color:var(--muted);font-size:16px}
+@media (min-width:760px){.worry ul{grid-template-columns:repeat(3,1fr)}.worry li:nth-child(2){transform:translateY(10px)}}
+
+/* ── 쓰는 순서: 번호 + 화면 ── */
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:clamp(40px,5vw,72px)}
+.flow li{display:grid;gap:24px;align-items:center}
+.flow__no{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--night);color:var(--moon);font-weight:800;font-size:20px}
+.flow h3{margin-top:14px;font-size:clamp(24px,2.6vw,32px)}
+.flow p{margin-top:8px;color:var(--muted)}
+.flow .laptop figcaption{color:var(--muted)}
+@media (min-width:900px){.flow li{grid-template-columns:.8fr 1.2fr}.flow li:nth-child(even) .flow__text{order:2}}
+
+/* ── 실제 작업 숫자 ── */
+.stats{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.stats li{padding:26px 24px;border-radius:var(--r-lg);background:var(--paper);box-shadow:var(--shadow-card),0 0 0 1px var(--line)}
+.stats b{display:block;font-size:clamp(34px,4vw,48px);line-height:1.1;letter-spacing:-.04em;color:var(--night)}
+.stats b em{font-style:normal;background:var(--moon);border-radius:10px;padding:0 .12em}
+.stats span{display:block;margin-top:8px;font-weight:700}
+.stats small{display:block;margin-top:8px;font-size:13.5px;color:var(--muted);line-height:1.6}
+@media (min-width:760px){.stats{grid-template-columns:repeat(3,1fr)}}
+
+/* ── 처리 위치 비교: 사실만, 출처·확인일과 함께 ── */
+.where{width:100%;border-collapse:separate;border-spacing:0;background:var(--paper);border-radius:var(--r-lg);box-shadow:var(--shadow-card),0 0 0 1px var(--line);overflow:hidden;font-size:16px}
+.where th,.where td{padding:15px 18px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.55}
+.where thead th{font-size:14px;background:var(--paper-2);color:var(--muted)}
+.where tbody tr:last-child>*{border-bottom:0}
+.where tr.us{background:#fffbea}
+.where tr.us th{color:var(--night)}
+.where td small{display:block;font-size:13px;color:var(--muted)}
+.where-note{margin-top:14px;font-size:14px;color:var(--muted);text-align:center}
+@media (max-width:759px){.where thead{display:none}.where,.where tbody,.where tr,.where th,.where td{display:block}.where tr{padding:14px 16px;border-bottom:1px solid var(--line)}.where th,.where td{padding:2px 0;border:0}}
+
+.mock-note{position:sticky;top:0;z-index:60;background:#fff4c2;color:#5a4600;text-align:center;font-weight:700;font-size:14px;padding:8px 16px}
+.next-note{margin:0 auto;max-width:760px;padding:28px;border:2px dashed var(--line-strong);border-radius:var(--r-lg);text-align:center;color:var(--muted)}
