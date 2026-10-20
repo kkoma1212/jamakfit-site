@@ -60,7 +60,6 @@ h3{letter-spacing:-.03em}
 .worry li{position:relative;background:var(--paper);border-radius:var(--r);padding:30px 24px 24px;box-shadow:var(--shadow-card),0 0 0 1px var(--line)}
 .worry li::before{content:"";position:absolute;top:-11px;left:24px;width:24px;height:24px;border-radius:50%;background:var(--m);box-shadow:2px 4px 0 #1c214026,inset 4px 5px 0 #ffffff55,inset -4px -6px 0 #0002}
 .worry h3{font-size:20px}
-.worry h3 small{display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:4px;text-decoration:line-through;text-decoration-color:#b0386a99}
 .worry p{margin-top:8px;color:var(--muted);font-size:16px}
 @media (min-width:760px){.worry ul{grid-template-columns:repeat(3,1fr)}.worry li:nth-child(2){transform:translateY(10px)}}
 
