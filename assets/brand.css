@@ -175,3 +175,9 @@ h3{letter-spacing:-.03em}
 .final h2{font-size:clamp(28px,3.6vw,40px)}
 .final p{margin-top:10px;color:#c9d1ff}
 .final .btn{margin-top:24px}
+
+/* ── 오픈소스 고지 쪽 ── */
+.doc-page h2{margin-top:48px;font-size:clamp(22px,2.4vw,28px)}
+.doc-page h3{margin:32px 0 12px;font-size:18px}
+.doc-page h2+.where,.doc-page h2+p{margin-top:16px}
+.doc-page .where td,.doc-page .where th{font-size:15px}
