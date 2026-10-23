@@ -7,24 +7,26 @@
 <meta name="description" content="자막핏 설치 파일에 들어 있는 오픈소스 부품과 처음 실행할 때 내려받는 부품의 라이선스입니다.">
 <link rel="canonical" href="https://kkoma1212.github.io/jamakfit-site/opensource.html">
 <link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site.css">
-<link rel="stylesheet" href="assets/brand.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800&display=swap">
+<link rel="stylesheet" href="assets/main.css">
 </head>
 <body>
 <header class="bar">
   <div class="wrap bar__in">
     <a class="brand" href="./" aria-label="자막핏 처음으로"><img src="assets/logo-light.svg" alt="자막핏" width="98" height="34"></a>
-    <a class="btn btn--primary bar__cta" href="https://github.com/kkoma1212/jamakfit-updates/releases/latest/download/jamakfit-setup.exe">설치 파일 받기</a>
+    <a class="btn btn--box bar__cta" href="https://github.com/kkoma1212/jamakfit-updates/releases/latest/download/jamakfit-setup.exe">설치 파일 받기</a>
   </div>
 </header>
-<main class="section doc-page">
+<main class="doc">
   <div class="wrap">
     <h1 class="h2">오픈소스 고지</h1>
-    <p class="lead">자막핏 시험판(0.9) 설치 파일에 들어 있는 부품과, 처음 실행할 때 내려받는 부품입니다. 설치 폴더(%LOCALAPPDATA%\자막핏)의 licenses 폴더에 같은 목록과 라이선스 원문(패키지에 들어 있는 경우)이 있습니다.</p>
+    <p class="sec__lead">자막핏 시험판(0.9) 설치 파일에 들어 있는 부품과, 처음 실행할 때 내려받는 부품입니다. 설치 폴더(%LOCALAPPDATA%\자막핏)의 licenses 폴더에 같은 목록과 라이선스 원문(패키지에 들어 있는 <span class="nowrap">경우)이</span> 있습니다.</p>
 
-    <h2>설치 파일에 들어 있는 부품</h2>
-    <table class="where">
+    <h2 class="h3">설치 파일에 들어 있는 부품</h2>
+    <div class="table-scroll"><table class="table table--wrap">
       <thead><tr><th scope="col">부품</th><th scope="col">판</th><th scope="col">라이선스</th></tr></thead>
       <tbody>
         <tr><th scope="row"><a href="https://github.com/BtbN/FFmpeg-Builds">FFmpeg</a> (BtbN 빌드, LGPL판)</th><td>autobuild-2026-10-19-13-06</td><td>LGPL 3.0 이상 · 별도 실행 파일로 사용 · <a href="https://github.com/FFmpeg/FFmpeg">소스</a></td></tr>
@@ -33,10 +35,10 @@
         <tr><th scope="row"><a href="https://github.com/snakers4/silero-vad">Silero VAD</a> (말소리 감지, faster-whisper에 포함)</th><td></td><td>MIT</td></tr>
         <tr><th scope="row"><a href="https://learn.microsoft.com/cpp/windows/redistributing-visual-cpp-files">Microsoft Visual C++ 실행 부품</a></th><td>msvcp140 등 4개</td><td>Microsoft Visual C++ 재배포 가능 파일</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h3>파이썬 패키지 34개</h3>
-    <table class="where">
+    <h3 class="h3">파이썬 패키지 34개</h3>
+    <div class="table-scroll"><table class="table table--wrap">
       <thead><tr><th scope="col">패키지</th><th scope="col">판</th><th scope="col">라이선스</th></tr></thead>
       <tbody>
           <tr><th scope="row"><a href="https://pypi.org/project/anyio/4.15.1/">anyio</a></th><td>4.15.1</td><td>MIT</td></tr>
@@ -74,10 +76,10 @@
           <tr><th scope="row"><a href="https://pypi.org/project/truststore/0.10.5/">truststore</a></th><td>0.10.5</td><td>MIT</td></tr>
           <tr><th scope="row"><a href="https://pypi.org/project/typing_extensions/4.16.0/">typing_extensions</a></th><td>4.16.0</td><td>PSF-2.0</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h2>처음 실행할 때 내려받는 부품</h2>
-    <table class="where">
+    <h2 class="h3">처음 실행할 때 내려받는 부품</h2>
+    <div class="table-scroll"><table class="table table--wrap">
       <thead><tr><th scope="col">부품</th><th scope="col">받는 곳</th><th scope="col">라이선스</th></tr></thead>
       <tbody>
         <tr><th scope="row">음성 인식 모델 faster-whisper-large-v3-turbo (모든 PC)</th><td><a href="https://huggingface.co/mobiuslabsgmbh/faster-whisper-large-v3-turbo">Hugging Face</a> · 원본 <a href="https://huggingface.co/openai/whisper-large-v3-turbo">OpenAI Whisper large-v3-turbo</a></td><td>MIT</td></tr>
@@ -85,20 +87,21 @@
         <tr><th scope="row">nvidia-cudnn-cu12 9.27.0.42 (NVIDIA 그래픽카드 PC만)</th><td><a href="https://pypi.org/project/nvidia-cudnn-cu12/9.27.0.42/">PyPI</a></td><td>NVIDIA 독점 라이선스</td></tr>
         <tr><th scope="row">nvidia-cuda-nvrtc-cu12 12.9.86 (NVIDIA 그래픽카드 PC만)</th><td><a href="https://pypi.org/project/nvidia-cuda-nvrtc-cu12/12.9.86/">PyPI</a></td><td>NVIDIA 독점 라이선스</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h2>이 사이트</h2>
+    <h2 class="h3">이 사이트</h2>
     <p>글꼴 <a href="https://github.com/orioncactus/pretendard">Pretendard</a> — SIL Open Font License 1.1</p>
-    <p class="where-note">2026년 10월 20일 기준. 각 부품의 저작권은 해당 저작권자에게 있습니다. 문의: <a href="mailto:gunyoon0322@naver.com">gunyoon0322@naver.com</a></p>
+    <p>글꼴 <a href="https://fonts.google.com/noto/specimen/Noto+Serif+KR">Noto Serif KR</a><span class="nowrap">(제목·대본</span> 글, Google Fonts) — SIL Open Font License 1.1</p>
+    <p class="note">2026년 10월 20일 기준(사이트 글꼴은 10월 23일 기준). 각 부품의 저작권은 해당 저작권자에게 있습니다. 문의: <a href="mailto:gunyoon0322@naver.com">gunyoon0322@naver.com</a></p>
   </div>
 </main>
 <footer class="foot">
   <div class="wrap foot__grid">
-    <div><a class="brand" href="./"><img src="assets/logo-light.svg" alt="자막핏" width="98" height="34"></a>
-      <p>운영자 이건윤 · <a class="mail" href="mailto:gunyoon0322@naver.com">gunyoon0322@naver.com</a></p>
+    <div><a href="./"><img src="assets/logo-dark.svg" alt="자막핏" width="86" height="30"></a>
+      <p>운영자 이건윤 · <a href="mailto:gunyoon0322@naver.com">gunyoon0322@naver.com</a></p>
       <p>© 2026 악동꼬마</p></div>
     <ul><li><a href="https://jamakfit.kkoma1212.workers.dev/terms">이용약관</a></li><li><a href="https://jamakfit.kkoma1212.workers.dev/privacy"><b>개인정보 처리방침</b></a></li>
-      <li><a href="opensource.html">오픈소스 고지</a></li><li><a href="https://github.com/kkoma1212/jamakfit-updates/releases">설치 파일·업데이트 내역</a></li></ul>
+      <li><a href="opensource.html">오픈소스 고지</a></li><li><a href="https://github.com/kkoma1212/jamakfit-updates/releases">설치 <span class="nowrap">파일·업데이트</span> 내역</a></li></ul>
   </div>
 </footer>
 </body>
